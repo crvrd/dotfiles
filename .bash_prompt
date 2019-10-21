@@ -1,0 +1,28 @@
+export CLICOLOR=1
+  
+find_git_branch() {
+  local branch
+  if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+    if [[ "$branch" == "HEAD" ]]; then
+      branch='detached'
+    fi
+    git_branch=" ($branch)"
+  else
+      git_branch=""
+  fi
+}
+
+find_git_dirty() {
+  local status=$(git status --porcelain 2> /dev/null)
+  if [[ "$git_branch" == "(detached)" ]]; then
+    status="dirty"
+  fi
+  if [[ "$status" != "" ]]; then
+    git_dirty='*'
+  else
+    git_dirty=''
+  fi
+}
+
+PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
+PS1='\[\033[37m\]\u\[\033[97m\]@\[\033[90m\]\h \[\033[96m\]\w\[\033[96m\]$git_branch\[\033[91m\]$git_dirty\[\033[97m\]\$ \[\033[00m\]'
