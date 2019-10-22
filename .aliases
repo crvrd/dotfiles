@@ -9,6 +9,9 @@ alias ll='ls -alF'
 
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+alias bootstrap='source ~/dotfiles/deploy.sh -f'
+
+
 system_uname=$( uname )
 
 case $system_uname in
