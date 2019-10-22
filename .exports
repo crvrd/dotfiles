@@ -1,0 +1,4 @@
+export HISTSIZE='2000';
+esport HISTFILESIZE='${HISTSIZE}';
+
+export GPG_TTY=$(tty)
