@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+pushd .;
+
 cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
@@ -24,3 +26,5 @@ else
 fi;
 
 unset copy_and_source;
+
+popd;
