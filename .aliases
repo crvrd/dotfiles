@@ -6,3 +6,19 @@ alias egrep='egrep --color=auto'
 
 alias la='ls -A'
 alias ll='ls -alF'
+
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+system_uname=$( uname )
+
+case $system_uname in
+  Linux)
+    ;;
+  Darwin)
+    alias hd='hexdump -C'
+    alias md5sum='md5'
+    alias sha1sum='shasum'
+    ;;
+  *)
+    ;;
+esac

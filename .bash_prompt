@@ -25,4 +25,4 @@ find_git_dirty() {
 }
 
 PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
-PS1='\[\033[37m\]\u\[\033[97m\]@\[\033[90m\]\h \[\033[96m\]\w\[\033[96m\]$git_branch\[\033[91m\]$git_dirty\[\033[97m\]\$ \[\033[00m\]'
+PS1='\[\033[37m\]\u\[\033[97m\]@\[\033[90m\]\h \[\033[96m\]\w\[\033[37m\]$git_branch\[\033[91m\]$git_dirty\[\033[97m\]\$ \[\033[00m\]'
