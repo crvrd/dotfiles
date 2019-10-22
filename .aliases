@@ -1,3 +1,4 @@
+system_uname=$( uname )
 case $system_uname in
   Linux)
     ls_color_flag='--color=auto'
@@ -12,31 +13,14 @@ case $system_uname in
     ;;
 esac
 
-
 alias ls='ls ${ls_color_flag}'
+alias la='ls -A'
+alias ll='ls -alF'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias la='ls -A'
-alias ll='ls -alF'
-
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 alias bootstrap='source ~/dotfiles/deploy.sh -f'
-
-
-system_uname=$( uname )
-
-case $system_uname in
-  Linux)
-    ;;
-  Darwin)
-    alias hd='hexdump -C'
-    alias md5sum='md5'
-    alias sha1sum='shasum'
-    ;;
-  *)
-    ;;
-esac
