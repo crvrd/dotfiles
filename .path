@@ -1,2 +1,11 @@
-export PATH=$PATH:~/.rbenv/bin
-export PATH=$PATH:~/.rbenv/plugins/ruby-build/bin
+system_uname=$( uname )
+case $system_uname in
+  Linux)
+    export PATH=$PATH:~/.rbenv/bin
+    export PATH=$PATH:~/.rbenv/plugins/ruby-build/bin
+    ;;
+  Darwin)
+    ;;
+  *)
+    ;;
+esac
