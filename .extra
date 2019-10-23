@@ -1,0 +1,11 @@
+system_uname=$( uname )
+case $system_uname in
+  Linux)
+    eval "$(rbenv init -)"
+    ;;
+  Darwin)
+    ;;
+  *)
+    ;;
+esac
+
