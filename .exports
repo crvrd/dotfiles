@@ -4,3 +4,19 @@ export HISTSIZE='2000';
 export HISTFILESIZE='${HISTSIZE}';
 
 export GPG_TTY=$(tty)
+
+system_uname=$( uname )
+case $system_uname in
+  Linux)
+    export GOROOT=/usr/lib/go
+    ;;
+  Darwin)
+    export GOROOT=/usr/local/opt/go/libexec
+    ;;
+  *)
+    ;;
+esac
+
+export GOPATH=~/dev/go
+export GOBIN=~/dev/go/bin
+export PATH=$PATH:$GOROOT/bin
