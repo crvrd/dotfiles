@@ -327,3 +327,4 @@ syn sync minlines=500
 let b:current_syntax = "go"
 
 " vim: sw=2 ts=2 et
+set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2
