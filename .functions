@@ -9,6 +9,18 @@ function findfile() {
 	find . -iname "$@";
 }
 
-function findstring() {
-	grep -ri "$@";
-}
+system_uname=$( uname )                                                                                                                                               
+case $system_uname in
+  Linux)
+      function findstring() {
+        grep -ri "$@";
+      }
+    ;;
+  Darwin)
+      function findstring() {
+        grep -ri "$@" *;
+      }
+    ;;
+  *)
+    ;;
+esac
