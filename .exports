@@ -18,6 +18,4 @@ case $system_uname in
 esac
 
 export GOPATH=~/dev/go
-export GOBIN=~/dev/go/bin
 export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOBIN
