@@ -27,3 +27,6 @@ alias bootstrap='source ~/dotfiles/deploy.sh -f'
 
 alias idea='nohup idea &>/dev/null &'
 alias insomnia='nohup insomnia &>/dev/null &'
+
+alias gf='git fetch --all --prune'
+alias gr='git rebase upstream/master'
