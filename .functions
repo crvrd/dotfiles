@@ -24,3 +24,7 @@ case $system_uname in
   *)
     ;;
 esac
+
+function grc() {
+	git rebase --onto $1~1 $1
+}
