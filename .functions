@@ -29,8 +29,17 @@ function grc() {
 	git rebase --onto $1~1 $1
 }
 
-function fdev1() {
+function clear_ssh_fdev1() {
   cat ~/.ssh/known_hosts | grep -v bastion.syssec.foundation.fdev1-uswest2 > /tmp/known_hosts;
   mv /tmp/known_hosts ~/.ssh/known_hosts;
+}
+
+function fdev1() {
+  clear_ssh_fdev1;
   ssh d.greer@bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl
+}
+
+function fdev1_scp() {
+  clear_ssh_fdev1;
+  scp $1 d.greer@bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl
 }
