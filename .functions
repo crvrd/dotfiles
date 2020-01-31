@@ -28,3 +28,9 @@ esac
 function grc() {
 	git rebase --onto $1~1 $1
 }
+
+function fdev1() {
+  cat ~/.ssh/known_hosts | grep -v bastion.syssec.foundation.fdev1-uswest2 > /tmp/known_hosts;
+  mv /tmp/known_hosts ~/.ssh/known_hosts;
+  ssh d.greer@bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl
+}
