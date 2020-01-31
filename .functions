@@ -41,5 +41,5 @@ function fdev1() {
 
 function fdev1_scp() {
   clear_ssh_fdev1;
-  scp $1 d.greer@bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl:~/$2/$1
+  scp $1 d.greer@bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl:~/$1
 }
