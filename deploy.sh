@@ -6,6 +6,8 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
+git commit -am "update" && git push
+
 function copy_and_source() {
   rsync --exclude ".git/" \
         --exclude ".DS_Store" \
