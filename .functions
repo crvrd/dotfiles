@@ -30,8 +30,7 @@ function grc() {
 }
 
 function clear_ssh_fdev1() {
-  cat ~/.ssh/known_hosts | grep -v bastion.syssec.foundation.fdev1-uswest2 > /tmp/known_hosts;
-  mv /tmp/known_hosts ~/.ssh/known_hosts;
+  ssh-keygen -R bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl
 }
 
 function fdev1() {
