@@ -29,16 +29,16 @@ function grc() {
 	git rebase --onto $1~1 $1
 }
 
-function clear_ssh_fdev1() {
-  ssh-keygen -R bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl
+function clear_ssh() {
+  ssh-keygen -R $1
 }
 
 function fdev1() {
-  clear_ssh_fdev1;
+  clear_ssh bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl;
   ssh d.greer@bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl
 }
 
 function fdev1_scp() {
-  clear_ssh_fdev1;
+  clear_ssh bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl;
   scp $1 d.greer@bastion.syssec.foundation.fdev1-uswest2.aws.sfdc.cl:~/$1
 }
