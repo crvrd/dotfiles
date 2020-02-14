@@ -4,6 +4,8 @@ pushd .;
 
 cd "$(dirname "${BASH_SOURCE}")";
 
+git fetch --all;
+
 git pull origin master;
 
 git commit -am "update" && git push
