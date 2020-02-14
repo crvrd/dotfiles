@@ -42,7 +42,7 @@ falcon() {
   if [[ $1 == *"dev"* ]]; then
     echo "Aloha"
   fi
-  if [[ $1 == *"esvc"* ] || [ $1 == *"prod"* ]]; then
+  if [[ $1 == *"esvc"* || $1 == *"prod"* ]]; then
     echo "Matlock + yubikey"
   fi
   ssh -o LogLevel=ERROR -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null d.greer@bastion.syssec.foundation.$1.aws.sfdc.cl
