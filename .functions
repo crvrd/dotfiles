@@ -29,15 +29,6 @@ function grc() {
 	git rebase --onto $1~1 $1
 }
 
-function clear_ssh() {
-  ssh-keygen -R $1
-}
-
-clear_scp() {
-  clear_ssh $1;
-  scp $2 d.greer@$1:~/$2
-}
-
 falcon() {
   if [[ $1 == *"dev"* ]]; then
     echo "Aloha"
@@ -49,7 +40,6 @@ falcon() {
 }
 
 falcon_scp() {
-  clear_ssh bastion.syssec.foundation.$1.aws.sfdc.cl;
-  scp $2 d.greer@bastion.syssec.foundation.$1.aws.sfdc.cl:~/$2
+  scp -o LogLevel=ERROR -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $2 d.greer@bastion.syssec.foundation.$1.aws.sfdc.cl:~/$2
 }
 
