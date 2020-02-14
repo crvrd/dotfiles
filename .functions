@@ -41,6 +41,7 @@ clear_scp() {
 falcon() {
   if [[ $1 == *"dev"* ]]; then
     echo "Aloha"
+    echo $1
   fi
   if [[ $1 == *"esvc"* || $1 == *"prod"* ]]; then
     echo "Matlock + yubikey"
