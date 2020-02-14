@@ -50,6 +50,6 @@ falcon() {
 
 falcon_scp() {
   clear_ssh bastion.syssec.foundation.$1.aws.sfdc.cl;
-  scp $2 d.greer@bastion.syssec.foundation.$1.sfdc.cl:~/$2
+  scp $2 d.greer@bastion.syssec.foundation.$1.aws.sfdc.cl:~/$2
 }
 
