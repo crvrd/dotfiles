@@ -43,3 +43,7 @@ falcon_scp() {
   scp -o LogLevel=ERROR -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $2 d.greer@bastion.syssec.foundation.$1.aws.sfdc.cl:~/$2
 }
 
+kupdate() {
+  aws sts get-caller-identity
+  aws eks --region $1 update-kubeconfig --name $2
+}
