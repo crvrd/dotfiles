@@ -46,4 +46,5 @@ falcon_scp() {
 kupdate() {
   aws sts get-caller-identity
   aws eks --region $1 update-kubeconfig --name $2
+  kubectl get pods -n $2
 }
