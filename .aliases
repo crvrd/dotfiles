@@ -13,9 +13,9 @@ case $system_uname in
     ;;
 esac
 
-alias ls='ls ${ls_color_flag}'
-alias la='ls -A'
-alias ll='ls -alF'
+alias ls='ls -alF ${ls_color_flag}'
+alias la='ls'
+alias ll='ls'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -24,6 +24,7 @@ alias egrep='egrep --color=auto'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 alias bootstrap='source ~/dotfiles/deploy.sh -f'
+alias bootedit='pushd . && cd ~/dotfiles'
 
 alias idea='nohup idea &>/dev/null &'
 alias insomnia='nohup insomnia &>/dev/null &'
