@@ -29,6 +29,14 @@ function grc() {
 	git rebase --onto $1~1 $1
 }
 
+cheats() {
+  if [ $# -gt 0 ]; then
+    cat ~/dotfiles/.cheats | grep -i $1
+  else
+    cat ~/dotfiles/.cheats
+  fi
+}
+
 falcon() {
   if [[ $1 == *"dev"* ]]; then
     echo "Aloha"
