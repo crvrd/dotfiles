@@ -26,6 +26,8 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias bootstrap='source ~/dotfiles/deploy.sh -f'
 alias bootedit='pushd . && cd ~/dotfiles'
 
+alias cheats='cat ~/dotfiles/.cheats'
+
 alias idea='nohup idea &>/dev/null &'
 alias insomnia='nohup insomnia &>/dev/null &'
 
