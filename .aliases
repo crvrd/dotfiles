@@ -35,3 +35,5 @@ alias git-remove-untracked='git fetch --prune && git branch -r | awk "{print \$1
 alias gs='gf && gr && git push'
 
 alias dl='docker login dva-registry.internal.salesforce.com'
+
+alias ltl='git commit --amend --no-edit && git push --force'
