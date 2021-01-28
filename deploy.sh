@@ -19,15 +19,7 @@ function copy_and_source() {
   source ~/.bash_profile;
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  copy_and_source;
-else
-  read -p "This may overwrite existing files in your home directory.  Are you sure? (y/n) " -n 1;
-  echo "";
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-    copy_and_source;
-  fi;
-fi;
+copy_and_source;
 
 unset copy_and_source;
 
