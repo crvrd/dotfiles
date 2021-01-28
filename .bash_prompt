@@ -13,6 +13,7 @@ find_git_branch() {
 }
 
 find_prompt_git_branch() {
+  find_git_branch
   if [[ "$git_branch" != "" ]]; then
     prompt_git_branch=" ($git_branch)"
   else
