@@ -6,9 +6,17 @@ find_git_branch() {
     if [[ "$branch" == "HEAD" ]]; then
       branch='detached'
     fi
-    git_branch=" ($branch)"
+    git_branch="$branch"
   else
-      git_branch=""
+    git_branch=""
+  fi
+}
+
+find_prompt_git_branch() {
+  if [[ "$git_branch" != "" ]]; then
+    prompt_git_branch=""
+  else
+    prompt_git_branch=" ($git_branch)"
   fi
 }
 
@@ -24,5 +32,5 @@ find_git_dirty() {
   fi
 }
 
-PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
-PS1='\[\033[37m\]\u\[\033[97m\]@\[\033[90m\]\h \[\033[96m\]\w\[\033[37m\]$git_branch\[\033[91m\]$git_dirty\[\033[97m\]\$ \[\033[00m\]'
+PROMPT_COMMAND="find_prompt_git_branch; find_git_dirty; $PROMPT_COMMAND"
+PS1='\[\033[37m\]\u\[\033[97m\]@\[\033[90m\]\h \[\033[96m\]\w\[\033[37m\]$prompt_git_branch\[\033[91m\]$git_dirty\[\033[97m\]\$ \[\033[00m\]'
