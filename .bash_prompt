@@ -1,4 +1,3 @@
-source .functions
 export CLICOLOR=1
   
 
