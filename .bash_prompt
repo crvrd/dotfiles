@@ -9,7 +9,7 @@ find_git_branch() {
       branch='detached'
     fi
     echo $branch
-    git_branch="$branch"
+    git_branch=" ($branch)"
   else
     git_branch=""
   fi
@@ -37,4 +37,4 @@ find_git_dirty() {
 }
 
 PROMPT_COMMAND="find_prompt_git_branch; find_git_dirty; $PROMPT_COMMAND"
-PS1='\[\033[37m\]\u\[\033[97m\]@\[\033[90m\]\h \[\033[96m\]\w\[\033[37m\]$prompt_git_branch\[\033[91m\]$git_dirty\[\033[97m\]\$ \[\033[00m\]'
+PS1='\[\033[37m\]\u\[\033[97m\]@\[\033[90m\]\h \[\033[96m\]\w\[\033[37m\]$git_branch\[\033[91m\]$git_dirty\[\033[97m\]\$ \[\033[00m\]'
