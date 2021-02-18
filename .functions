@@ -59,7 +59,7 @@ kupdate() {
 
 importrealms() {
   kubectl create job --from=cronjob/quantumk-keycloak-sp-onboarder -n quantumk importjob
-  sleep 5
+  sleep 8
   kubectl get pods -n quantumk | grep -i importjob | kubectl logs -f -n quantumk -c keycloak-sp-onboarder $(awk '{print $1}')
   kubectl delete job importjob -n quantumk
 }
