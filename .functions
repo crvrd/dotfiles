@@ -56,3 +56,9 @@ kupdate() {
   aws eks --region $1 update-kubeconfig --name $3
   kubectl get pods -n $2
 }
+
+importrealms() {
+  kubectl create job --from=cronjob/quantumk-keycloak-sp-onboarder -n quantumk importjob
+  sleep 5
+  quantumk quantumk-b | grep -i importjob | kubectl logs -f -n quantumk -c keycloak-sp-onboarder $(awk '{print $1}')
+}
