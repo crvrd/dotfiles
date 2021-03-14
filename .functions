@@ -62,6 +62,10 @@ function grc() {
 	git rebase --onto $1~1 $1
 }
 
+function gp() {
+  git push -u origin $(awk '{find_git_branch}')
+}
+
 function cheats() {
   if [[ $# -gt 0 ]]; then
     cat ~/dotfiles/.cheats | grep -i $1
