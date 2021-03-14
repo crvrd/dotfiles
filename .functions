@@ -63,7 +63,8 @@ function grc() {
 }
 
 function gp() {
-  echo $(awk '{find_git_branch}')
+  find_git_branch
+  git push -u origin $git_branch
 }
 
 function cheats() {
