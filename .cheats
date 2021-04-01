@@ -17,3 +17,13 @@ K8s/Kubernetes/Kubectl:
         ssh -o LogLevel=ERROR -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null d.greer@bastion.syssec.foundation.$1.aws.sfdc.cl
       }
 
+QuantumK:
+Code to token:
+curl --location --request POST 'https://quantumk-ha.foundation.test1-uswest2.aws.sfdc.cl/auth/realms/centralperffoundation/protocol/openid-connect/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'client_id=cpf-merlin-oidc' \
+--data-urlencode 'client_secret=7cc7f9d9-a7d4-4963-9172-6a04e2c6d1fc' \
+--data-urlencode 'grant_type=authorization_code' \
+--data-urlencode 'redirect_uri=https://oidcdebugger.com/debug' \
+--data-urlencode 'session_state=07c857ac-dba9-4fad-8823-9463eb88efc6' \
+--data-urlencode 'code=a22bcc3a-27cf-4f13-9f6c-0f870f80207b.07c857ac-dba9-4fad-8823-9463eb88efc6.4cc21ae9-6421-457d-b080-66da200e691a' \
