@@ -103,6 +103,7 @@ importrealms() {
 }
 
 vaultlogin() {
+  echo "Ensure you have exported PCSK creds."
   export VAULT_CACERT=/home/d.greer/dev/dynamic-keytool/src/test/resources/cacerts.pem
   export QUANTUMK_CA_CERT_FILE=$VAULT_CACERT
   export QUANTUMK_VAULT_ROLE=371972397426-iam-quantumk
