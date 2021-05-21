@@ -102,12 +102,12 @@ importrealms() {
   kubectl delete job importjob -n quantumk
 }
 
-vaulttest() {
-  export VAULT_CACERT=/home/d.greer/dev/dynamic-keytool/src/test/resources/cacerts.pem
-  export ENV_VAULT_ROLE=371972397426-iam-quantumk
+vaultlogin() {
+  export QUANTUMK_CA_CERT_FILE=/home/d.greer/dev/dynamic-keytool/src/test/resources/cacerts.pem
+  export QUANTUMK_VAULT_ROLE=371972397426-iam-quantumk
   export ENV_SECRET_SERVICE_HOSTNAME=https://api.vault.secrets.fdev1-uswest2.aws.sfdc.cl
   export AWS_LOGIN_HEADER=$(echo $ENV_SECRET_SERVICE_HOSTNAME|awk -F: '{print $2}'|sed 's/\///g')
-  export VAULT_TOKEN=$(vault login -token-only -address=$ENV_SECRET_SERVICE_HOSTNAME -method=aws header_value=$AWS_LOGIN_HEADER role=$ENV_VAULT_ROLE)
+  export VAULT_TOKEN=$(vault login -token-only -address=$ENV_SECRET_SERVICE_HOSTNAME -method=aws header_value=$AWS_LOGIN_HEADER role=$QUANTUMK_VAULT_ROLE)
   export VAULT_ADDR=https://api.vault.secrets.fdev1-uswest2.aws.sfdc.cl
   vault kv list kv/v2/371972397426/
 }
