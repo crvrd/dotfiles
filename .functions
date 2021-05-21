@@ -110,5 +110,6 @@ vaultlogin() {
   export AWS_LOGIN_HEADER=$(echo $ENV_SECRET_SERVICE_HOSTNAME|awk -F: '{print $2}'|sed 's/\///g')
   export VAULT_TOKEN=$(vault login -token-only -address=$ENV_SECRET_SERVICE_HOSTNAME -method=aws header_value=$AWS_LOGIN_HEADER role=$QUANTUMK_VAULT_ROLE)
   export VAULT_ADDR=https://api.vault.secrets.fdev1-uswest2.aws.sfdc.cl
+  export IAC_FALCON_INSTANCE=fdev1-uswest2
   vault kv list kv/v2/371972397426/
 }
