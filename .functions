@@ -121,7 +121,7 @@ kubecp() {
   echo "Copying AwsVaultReader"
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/kst/providers/secrets/vault/AwsVaultReader.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/kst/providers/secrets/vault/AwsVaultReader.py -n quantumk -c keycloak
   echo "Copying HashicorpVaultReader"
-  kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/kst/providers/secrets/vault/HashicorpVaultReader.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/kst/providers/secrets/vault/HashicorpVaultReader-test.py -n quantumk -c keycloak
+  kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/kst/providers/secrets/vault/HashicorpVaultReader.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/kst/providers/secrets/vault/HashicorpVaultReader.py -n quantumk -c keycloak
   echo "Copying secret_helper"
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/secret_helper.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/secret_helper.py -n quantumk -c keycloak
   echo "Copying sp_utils"
