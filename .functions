@@ -115,7 +115,7 @@ vaultlogin() {
   vault kv list kv/v2/371972397426/
 }
 
-kubecp {
+kubecp() {
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/sp_importer.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/sp_importer.py -n quantumk -c keycloak
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/kst/providers/secrets/vault/AwsVaultReader.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/kst/providers/secrets/vault/AwsVaultReader-test.py -n quantumk -c keycloak
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/kst/providers/secrets/vault/HashicorpVaultReader.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/kst/providers/secrets/vault/HashicorpVaultReader-test.py -n quantumk -c keycloak
