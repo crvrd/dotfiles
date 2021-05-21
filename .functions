@@ -127,5 +127,5 @@ kubecp() {
   echo "Copying sp_utils"
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/sp_utils/sp_utils.py quantumk-keycloak-666f5cffdb-w6k5p:/opt/quantumk/keycloak/sp_utils/sp_utils.py -n quantumk -c keycloak
   echo "sshing"
-  kubectl exec -it quantumk-keycloak-666f5cffdb-w6k5p -n quantumk -c keycloak -- bash
+  kubectl exec -it quantumk-keycloak-666f5cffdb-w6k5p -n quantumk -c keycloak -- /opt/quantumk/keycloak/sp_importer.py --proto
 }
