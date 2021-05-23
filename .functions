@@ -106,7 +106,7 @@ vaultlogin() {
   echo "Ensure you have exported PCSK creds."
   export VAULT_CACERT=/home/d.greer/dev/dynamic-keytool/src/test/resources/cacerts.pem
   export QUANTUMK_CA_CERT_FILE=$VAULT_CACERT
-  export QUANTUMK_VAULT_ROLE=kv_qk371972397426_quantumk-rw
+  export QUANTUMK_VAULT_ROLE=371972397426-iam-quantumk
   export ENV_SECRET_SERVICE_HOSTNAME=https://api.vault.secrets.fdev1-uswest2.aws.sfdc.cl
   export AWS_LOGIN_HEADER=$(echo $ENV_SECRET_SERVICE_HOSTNAME|awk -F: '{print $2}'|sed 's/\///g')
   export VAULT_TOKEN=$(vault login -token-only -address=$ENV_SECRET_SERVICE_HOSTNAME -method=aws header_value=$AWS_LOGIN_HEADER role=$QUANTUMK_VAULT_ROLE)
