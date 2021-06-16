@@ -118,6 +118,8 @@ vaultlogin() {
 kubecp() {
   echo "Copying sp_importer"
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/sp_importer.py $1:/opt/quantumk/keycloak/sp_importer.py -n quantumk -c keycloak
+  echo "Copying defaults"
+  kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/defaults.py $1:/opt/quantumk/keycloak/defaults.py -n quantumk -c keycloak
   echo "Copying AwsVaultReader"
   kubectl cp /home/d.greer/dev/keycloak_docker_tng/keycloak/kst/providers/secrets/vault/AwsVaultReader.py $1:/opt/quantumk/keycloak/kst/providers/secrets/vault/AwsVaultReader.py -n quantumk -c keycloak
   echo "Copying HashicorpVaultReader"
