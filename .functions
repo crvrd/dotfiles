@@ -72,10 +72,8 @@ function gpf() {
   git push -u origin $git_branch --force
 }
 
-function gc() {
-  git commit -am "update"
-  git reset --soft HEAD~"$1"
-  git commit -am "$2"
+function gca() {
+  for i in {1.."$1"}; do git commit --amend --no-edit; done
 }
 
 function cheats() {
