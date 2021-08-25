@@ -74,7 +74,7 @@ function gpf() {
 
 function gc() {
   git commit -am "update"
-  git rebase --soft HEAD~$1
+  git reset --soft HEAD~$1
   git commit -am ~2
 }
 
