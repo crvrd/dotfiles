@@ -75,7 +75,7 @@ function gpf() {
 function gc() {
   git commit -am "update"
   git reset --soft HEAD~$1
-  git commit -am ~2
+  git commit -am $2
 }
 
 function cheats() {
