@@ -67,6 +67,17 @@ function gp() {
   git push -u origin $git_branch
 }
 
+function gpf() {
+  find_git_branch
+  git push -u origin $git_branch --force
+}
+
+function gc() {
+  git commit -am "update"
+  git rebase -- soft HEAD~$1
+  git commit -am ~2
+}
+
 function cheats() {
   if [[ $# -gt 0 ]]; then
     cat ~/dotfiles/.cheats | grep -i $1
