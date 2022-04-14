@@ -27,3 +27,6 @@ curl --location --request POST 'https://quantumk-ha.foundation.test1-uswest2.aws
 --data-urlencode 'redirect_uri=https://oidcdebugger.com/debug' \
 --data-urlencode 'session_state=07c857ac-dba9-4fad-8823-9463eb88efc6' \
 --data-urlencode 'code=a22bcc3a-27cf-4f13-9f6c-0f870f80207b.07c857ac-dba9-4fad-8823-9463eb88efc6.4cc21ae9-6421-457d-b080-66da200e691a' \
+
+Curl x509:
+curl --key /tmp/client-key.pem --cert /tmp/client.pem --header 'Content-type: application/x-www-form-urlencoded' --data-urlencode 'grant_type=client_credentials' --data-urlencode 'client_id=testservicemesh-client1' https://qks2s-mtls.infra-iam.perf1-useast2.aws.sfdc.cl/auth/realms/S2S/protocol/openid-connect/token
