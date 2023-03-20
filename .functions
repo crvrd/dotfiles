@@ -64,7 +64,7 @@ function grc() {
 
 function gp() {
   find_git_branch
-  git push -u origin $git_branch
+  git push -u upstream $git_branch
 }
 
 function gpf() {
