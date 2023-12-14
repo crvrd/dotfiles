@@ -5,6 +5,7 @@ case $system_uname in
     export PATH=$PATH:~/.rbenv/plugins/ruby-build/bin
     ;;
   Darwin)
+    export PATH=$PATH:~/dev/go/bin
     ;;
   *)
     ;;
