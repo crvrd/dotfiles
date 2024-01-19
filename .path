@@ -6,6 +6,7 @@ case $system_uname in
     ;;
   Darwin)
     export PATH=$PATH:~/dev/go/bin
+    export PATH=$PATH:~/dev/installed/flutter/bin
     ;;
   *)
     ;;
