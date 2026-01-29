@@ -1,3 +1,4 @@
+export PATH="$HOME/.local/bin:$PATH"
 system_uname=$( uname )
 case $system_uname in
   Linux)
